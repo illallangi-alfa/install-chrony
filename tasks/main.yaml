@@ -1,0 +1,8 @@
+---
+- name: "Install chrony (debian)"
+  apt:
+    pkg: "{{ install_chrony.packages[(ansible_os_family | lower) + '_' + (ansible_architecture | lower)] | json_query('[].name')}}"
+    update_cache: yes
+    install_recommends: no
+  tags:
+    - "chrony"

@@ -1,0 +1,7 @@
+---
+install_chrony:
+  packages:
+    common: &packages
+      - name: "chrony"
+    debian_armv7l: *packages
+    debian_x86_64: *packages
